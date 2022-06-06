@@ -1,4 +1,5 @@
 /* game board table */
+/* color pallete based on https://coolors.co/palette/780000-c1121f-fdf0d5-003049-669bbc */
 
 #board td {
   width: 4rem;
