@@ -22,10 +22,12 @@
 
 .p1 {
   background-color: #c1121f;
+  border: dashed 3.5px #780000;
 }
 
 .p2 {
   background-color: #669bbc;
+  border: dashed 3.5px #003049;
 }
 
 /* column-top is table row of clickable areas for each column */
@@ -38,5 +40,4 @@
 
 #column-top td:hover {
   background-color: #F7C864;
-
 }
