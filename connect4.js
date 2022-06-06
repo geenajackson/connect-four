@@ -74,7 +74,7 @@ function placeInTable(y, x) {
   const piece = document.createElement("div");
   let pClass = "";
   (currPlayer === 1 ? pClass = "p1" : pClass = "p2");
-  piece.classList("piece", pClass);
+  piece.classList.add("piece", pClass);
   cell.append(piece);
 }
 
