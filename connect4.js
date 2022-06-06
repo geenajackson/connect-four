@@ -22,7 +22,7 @@ function makeBoard() {
     for (let x = 0; x < WIDTH; x++) {
       array.push(null);
     }
-    board.push(array)
+    board.push(array);
   }
   return board;
 }
@@ -31,8 +31,10 @@ function makeBoard() {
 
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+  const htmlBoard = document.getElementById("board");
 
   // TODO: add comment for this code
+  //gets the top row of the board table and adds an id for styling and event handler for calling handleClick
   const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
@@ -45,6 +47,7 @@ function makeHtmlBoard() {
   htmlBoard.append(top);
 
   // TODO: add comment for this code
+  //creates a unique id for each cell based on the cell's x and y position
   for (let y = 0; y < HEIGHT; y++) {
     const row = document.createElement("tr");
     for (let x = 0; x < WIDTH; x++) {
