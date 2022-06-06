@@ -63,7 +63,16 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  console.log("x: ", x)
+  let row = board[x - 1]
+  console.log(board)
+  for (let i = 1; i < HEIGHT; i++) {
+    if (row[HEIGHT - i] === null) {
+      row[HEIGHT - i] = currPlayer;
+      return (HEIGHT - i);
+    }
+  }
+  return null;
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
@@ -76,7 +85,6 @@ function placeInTable(y, x) {
   (currPlayer === 1 ? pClass = "p1" : pClass = "p2");
   piece.classList.add("piece", pClass);
   cell.append(piece);
-  console.log(cell)
   return cell;
 }
 
