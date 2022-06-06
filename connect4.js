@@ -76,6 +76,8 @@ function placeInTable(y, x) {
   (currPlayer === 1 ? pClass = "p1" : pClass = "p2");
   piece.classList.add("piece", pClass);
   cell.append(piece);
+  console.log(cell)
+  return cell;
 }
 
 /** endGame: announce game end */
@@ -99,6 +101,7 @@ function handleClick(evt) {
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
   placeInTable(y, x);
+  board[y][x] = currPlayer;
 
   // check for win
   if (checkForWin()) {
