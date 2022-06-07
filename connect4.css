@@ -8,14 +8,18 @@ body {
   flex-direction: column;
   font-family: 'Londrina Solid', cursive;
   font-size: 20px;
-  background: rgb(128, 81, 84);
-  background: linear-gradient(90deg, rgba(128, 81, 84, 1) 0%, rgba(238, 233, 226, 1) 50%, rgba(137, 146, 154, 1) 100%);
+  color: #3A2903;
+  text-shadow: 3px 3px #FEF8EC;
+  /* gradient created with https://cssgradient.io/ */
+  background: rgb(193, 18, 31);
+  background: linear-gradient(90deg, rgba(193, 18, 31, 1) 0%, rgba(253, 240, 213, 1) 50%, rgba(102, 155, 188, 1) 100%);
 }
 
 #board td {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   border: solid 1.5px #624104;
+  border-radius: 8%;
   background-color: #fdf0d5;
 }
 
