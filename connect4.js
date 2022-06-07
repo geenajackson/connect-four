@@ -150,13 +150,18 @@ function checkForWin() {
 
   // TODO: read and understand this code. Add comments to help you.
 
+  //for each cell in the board:
   for (let y = 0; y < HEIGHT; y++) {
     for (let x = 0; x < WIDTH; x++) {
+      //checks the position of each cell by moving the coordinates of the cell in a line of four, a la a coordinate plane
       let horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
       let vert = [[y, x], [y + 1, x], [y + 2, x], [y + 3, x]];
+      //x position moves to the right
       let diagDR = [[y, x], [y + 1, x + 1], [y + 2, x + 2], [y + 3, x + 3]];
+      //x position moves to the left
       let diagDL = [[y, x], [y + 1, x - 1], [y + 2, x - 2], [y + 3, x - 3]];
 
+      // if any of these conditions turns out to be true, we have a winner!
       if (_win(horiz) || _win(vert) || _win(diagDR) || _win(diagDL)) {
         return true;
       }
