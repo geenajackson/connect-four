@@ -5,6 +5,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 20px;
   background: rgb(128, 81, 84);
   background: linear-gradient(90deg, rgba(128, 81, 84, 1) 0%, rgba(238, 233, 226, 1) 50%, rgba(137, 146, 154, 1) 100%);
 }
