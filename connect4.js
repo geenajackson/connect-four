@@ -5,8 +5,8 @@
  * board fills (tie)
  */
 
-const WIDTH = 3; //7
-const HEIGHT = 2; //6
+const WIDTH = 7;
+const HEIGHT = 6;
 
 let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
@@ -63,9 +63,7 @@ function makeHtmlBoard() {
 
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
-  console.log("x: ", x)
   for (let i = 1; i < WIDTH; i++) {
-    console.log(board)
     if (board[HEIGHT - i][x] === null) {
       board[HEIGHT - i][x] = currPlayer;
       return (HEIGHT - i);
@@ -118,12 +116,18 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  if (board.every((val) => val === null)) {
-    endGame("It's a tie!");
+  if (checkForTie()) {
+    return endGame("It's a tie!");
   }
+
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   (currPlayer === 1 ? currPlayer = 2 : currPlayer = 1);
+}
+
+//checks every board cell for a non-null value
+function checkForTie() {
+  return board.every(cell => cell.every(val => val !== null))
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
