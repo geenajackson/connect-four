@@ -14,7 +14,6 @@ let gameEnd = false; //boolean to track if the game has finished
 
 const reset = document.querySelector("button");
 reset.addEventListener("click", function () {
-  console.log("clicked!");
   window.location.reload();
 })
 
@@ -99,7 +98,7 @@ function placeInTable(y, x) {
 function endGame(msg) {
   // TODO: pop up alert message
   gameEnd = true;
-  alert(msg);
+  setTimeout(() => alert(msg), 10);
 }
 
 /** handleClick: handle click of column top to play piece */
