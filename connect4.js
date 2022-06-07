@@ -12,6 +12,13 @@ let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
 let gameEnd = false; //boolean to track if the game has finished
 
+const reset = document.querySelector("button");
+reset.addEventListener("click", function () {
+  console.log("clicked!");
+  window.location.reload();
+})
+
+
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
  */
@@ -58,6 +65,7 @@ function makeHtmlBoard() {
     }
     htmlBoard.append(row);
   }
+
 }
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
@@ -172,6 +180,8 @@ function checkForWin() {
     }
   }
 }
+
+
 
 makeBoard();
 makeHtmlBoard();
