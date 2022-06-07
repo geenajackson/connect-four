@@ -1,10 +1,18 @@
 /* game board table */
 /* color pallete based on https://coolors.co/palette/780000-c1121f-fdf0d5-003049-669bbc */
 
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(128, 81, 84);
+  background: linear-gradient(90deg, rgba(128, 81, 84, 1) 0%, rgba(238, 233, 226, 1) 50%, rgba(137, 146, 154, 1) 100%);
+}
+
 #board td {
   width: 4rem;
   height: 4rem;
-  border: solid 1px #666;
+  border: solid 1.5px #624104;
   background-color: #fdf0d5;
 }
 
@@ -34,10 +42,11 @@
 
 #column-top td {
   background-color: #FEF8EC;
-  border: dashed 1px lightgray;
+  border: solid 2px #fdf0d5;
   border-radius: 50%;
 }
 
 #column-top td:hover {
   background-color: #F7C864;
+  border: dashed 2px #F6B128;
 }
