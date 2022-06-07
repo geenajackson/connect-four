@@ -15,6 +15,20 @@ body {
   background: linear-gradient(90deg, rgba(193, 18, 31, 1) 0%, rgba(253, 240, 213, 1) 50%, rgba(102, 155, 188, 1) 100%);
 }
 
+button {
+  background-color: #F7C864;
+  padding: 15px;
+  margin-top: 10%;
+  font-family: 'Londrina Solid', cursive;
+  font-size: 25px;
+  border-radius: 10%;
+}
+
+button:hover {
+  background-color: #F6B128;
+  box-shadow: 0px 2px 3px #614205;
+}
+
 #board td {
   width: 6rem;
   height: 6rem;
