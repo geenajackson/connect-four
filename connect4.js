@@ -64,11 +64,10 @@ function makeHtmlBoard() {
 function findSpotForCol(x) {
   // TODO: write the real version of this, rather than always returning 0
   console.log("x: ", x)
-  let row = board[x - 1]
-  console.log(board)
-  for (let i = 1; i < HEIGHT; i++) {
-    if (row[HEIGHT - i] === null) {
-      row[HEIGHT - i] = currPlayer;
+  for (let i = 1; i < WIDTH; i++) {
+    console.log(board)
+    if (board[HEIGHT - i][x] === null) {
+      board[HEIGHT - i][x] = currPlayer;
       return (HEIGHT - i);
     }
   }
