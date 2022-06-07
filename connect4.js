@@ -10,6 +10,7 @@ const HEIGHT = 6;
 
 let currPlayer = 1; // active player: 1 or 2
 let board = []; // array of rows, each row is array of cells  (board[y][x])
+let gameEnd = false; //boolean to track if the game has finished
 
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
@@ -89,40 +90,43 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
+  gameEnd = true;
   alert(msg);
 }
 
 /** handleClick: handle click of column top to play piece */
 
 function handleClick(evt) {
-  // get x from ID of clicked cell
-  let x = +evt.target.id;
+  if (!gameEnd) {
+    // get x from ID of clicked cell
+    let x = +evt.target.id;
 
-  // get next spot in column (if none, ignore click)
-  let y = findSpotForCol(x);
-  if (y === null) {
-    return;
+    // get next spot in column (if none, ignore click)
+    let y = findSpotForCol(x);
+    if (y === null) {
+      return;
+    }
+
+    // place piece in board and add to HTML table
+    // TODO: add line to update in-memory board
+    placeInTable(y, x);
+    board[y][x] = currPlayer;
+
+    // check for win
+    if (checkForWin()) {
+      return endGame(`Player ${currPlayer} won!`);
+    }
+
+    // check for tie
+    // TODO: check if all cells in board are filled; if so call, call endGame
+    if (checkForTie()) {
+      return endGame("It's a tie!");
+    }
+
+    // switch players
+    // TODO: switch currPlayer 1 <-> 2
+    (currPlayer === 1 ? currPlayer = 2 : currPlayer = 1);
   }
-
-  // place piece in board and add to HTML table
-  // TODO: add line to update in-memory board
-  placeInTable(y, x);
-  board[y][x] = currPlayer;
-
-  // check for win
-  if (checkForWin()) {
-    return endGame(`Player ${currPlayer} won!`);
-  }
-
-  // check for tie
-  // TODO: check if all cells in board are filled; if so call, call endGame
-  if (checkForTie()) {
-    return endGame("It's a tie!");
-  }
-
-  // switch players
-  // TODO: switch currPlayer 1 <-> 2
-  (currPlayer === 1 ? currPlayer = 2 : currPlayer = 1);
 }
 
 //checks every board cell for a non-null value
